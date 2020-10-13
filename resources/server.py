@@ -4,10 +4,10 @@ import random
 import requests
 
 
-@app.route("/")
-def index():
+@app.route("/<value>")
+def index(value='ip'):
     if random.choice([True, False]):
-        r = requests.get("http://ipinfo.io/ip")
+        r = requests.get(f'http://ipinfo.io/{value}')
         return r.text
     else:
         raise Exception("Erro no request!")
