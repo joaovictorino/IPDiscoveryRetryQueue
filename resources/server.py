@@ -4,6 +4,7 @@ import random
 import requests
 
 
+@app.route("/")
 @app.route("/<value>")
 def index(value='ip'):
     if random.choice([True, False]):
