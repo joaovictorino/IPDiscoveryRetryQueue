@@ -11,7 +11,7 @@ def index(value='ip'):
         r = requests.get(f'http://ipinfo.io/{value}')
         return r.text
     else:
-        raise Exception("Erro no request!")
+        raise Exception("Error")
 
 if __name__ == "__main__":
     app.run()
