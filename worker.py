@@ -1,5 +1,5 @@
 from queue import Queue
-from requestServiceIP import call
+from callService import call
 
 queueSystem = Queue()
 
