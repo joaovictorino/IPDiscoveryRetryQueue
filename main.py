@@ -1,4 +1,4 @@
-from queue import Queue
+from queueWrapper import QueueWrapper
 
 def decodificarOpcao(opcaoNumero):
     if int(opcaoNumero) == 1:
@@ -11,7 +11,7 @@ def decodificarOpcao(opcaoNumero):
         return "country"
 
 def exibirResultado(message):
-    print(message)
+    print(message.decode())
 
 print("1. ip")
 print("2. cidade")
@@ -22,7 +22,7 @@ opcaoNumero = input("O que você deseja saber? (escolha pelo número) ")
 
 opcao = decodificarOpcao(opcaoNumero)
 
-queueSystem = Queue()
+queueSystem = QueueWrapper()
 
 queueSystem.publish("ip-query", opcao)
 

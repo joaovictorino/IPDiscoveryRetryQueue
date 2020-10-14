@@ -1,6 +1,6 @@
 import pika
 
-class Queue:
+class QueueWrapper:
 
     def __init__(self):
         params = pika.URLParameters("amqps://kisseibz:A-TH1pbRRQ_yXvmPnh2Xl8X6MhsKTeBp@chimpanzee.rmq.cloudamqp.com/kisseibz")
