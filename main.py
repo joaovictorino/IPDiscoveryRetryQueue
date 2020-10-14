@@ -1,16 +1,16 @@
 from queueWrapper import QueueWrapper
 
-def decodificarOpcao(opcaoNumero):
-    if int(opcaoNumero) == 1:
+def decodeOption(optionNumber):
+    if int(optionNumber) == 1:
         return "ip"
-    elif int(opcaoNumero) == 2:
+    elif int(optionNumber) == 2:
         return "city"
-    elif int(opcaoNumero) == 3:
+    elif int(optionNumber) == 3:
         return "loc"
-    elif int(opcaoNumero) == 4:
+    elif int(optionNumber) == 4:
         return "country"
 
-def exibirResultado(message):
+def showResult(message):
     print(message.decode())
 
 print("1. ip")
@@ -18,12 +18,12 @@ print("2. cidade")
 print("3. localização")
 print("4. pais")
 
-opcaoNumero = input("O que você deseja saber? (escolha pelo número) ")
+optionNumber = input("O que você deseja saber? (escolha pelo número) ")
 
-opcao = decodificarOpcao(opcaoNumero)
+option = decodeOption(optionNumber)
 
 queueSystem = QueueWrapper()
 
-queueSystem.publish("ip-query", opcao)
+queueSystem.publish("ip-query", option)
 
-queueSystem.receive("response", exibirResultado, True)
+queueSystem.receive("response", showResult, True)

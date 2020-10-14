@@ -8,4 +8,4 @@ class CallService:
     def call(self, body):
         response = requests.get("http://localhost:5000/{0}".format(body))
         response.raise_for_status()
-        return response.text
+        return response.text.strip()
